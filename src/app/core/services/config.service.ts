@@ -12,7 +12,7 @@ export class ConfigService {
     azureProject: '',
     azurePat: '',
     geminiApiKey: '',
-    geminiModel: 'gemini-2.5-flash'
+    geminiModel: 'gemini-flash-latest'
   };
 
   private configSignal = signal<AppConfig>(this.loadInitialConfig());

@@ -285,3 +285,20 @@
     margin-bottom: 2px;
   }
 }
+
+.card-footer-action {
+  margin-top: $spacing-2;
+  padding-top: $spacing-3;
+  border-top: 1px dashed $color-border-light;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-card-test {
+  @include button-secondary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-md;
+}
+

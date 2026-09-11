@@ -52,7 +52,9 @@ export class AzureDevOpsService {
       });
     }
 
-    const url = `${this.getBaseUrl()}/projects/${encodeURIComponent(azureProject)}?api-version=7.0`;
+    const org = encodeURIComponent(azureOrg.trim());
+    const project = encodeURIComponent(azureProject.trim());
+    const url = `https://dev.azure.com/${org}/_apis/projects/${project}?api-version=7.0`;
     return this.http.get<any>(url, { headers: this.getAuthHeaders() }).pipe(
       map(res => ({
         success: true,

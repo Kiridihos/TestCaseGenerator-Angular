@@ -115,6 +115,20 @@
           </div>
           <span class="field-hint">Requiere permisos de lectura y escritura en <strong>Work Items (Read & Write)</strong></span>
         </div>
+
+        <div class="card-footer-action">
+          <button type="button" class="btn-card-test" (click)="testAzureConnection()" [disabled]="isTestingAzure()">
+            @if (isTestingAzure()) {
+              <svg class="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-opacity="0.25"></circle>
+                <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+              <span>Verificando Azure...</span>
+            } @else {
+              <span>Probar Conexión Azure DevOps</span>
+            }
+          </button>
+        </div>
       </div>
     </div>
 
@@ -176,6 +190,20 @@
             <li>Salida JSON estricta (ISTQB aligned)</li>
             <li>Generación BDD Gherkin automatizable</li>
           </ul>
+        </div>
+
+        <div class="card-footer-action">
+          <button type="button" class="btn-card-test" (click)="testGeminiConnection()" [disabled]="isTestingGemini()">
+            @if (isTestingGemini()) {
+              <svg class="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-opacity="0.25"></circle>
+                <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+              <span>Verificando Gemini...</span>
+            } @else {
+              <span>Probar Conexión Gemini IA</span>
+            }
+          </button>
         </div>
       </div>
     </div>

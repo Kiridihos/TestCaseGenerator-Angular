@@ -14,7 +14,10 @@ export class GeminiAiService {
   private configService = inject(ConfigService);
 
   private getEndpoint(model: string, apiKey: string): string {
-    const selectedModel = model || 'gemini-2.5-flash';
+    let selectedModel = model || 'gemini-flash-latest';
+    if (['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'].includes(selectedModel)) {
+      selectedModel = 'gemini-flash-latest';
+    }
     return `https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey.trim()}`;
   }
 
